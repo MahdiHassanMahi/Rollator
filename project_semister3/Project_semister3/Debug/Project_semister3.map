@@ -496,14 +496,14 @@ END GROUP
  .debug_frame   0x00000024       0x84 MOTOR.o
  .debug_frame   0x000000a8       0xc8 Speed.o
 
-.debug_str      0x00000000      0x427
+.debug_str      0x00000000      0x47f
  *(.debug_str)
  .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/2.2.509/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_str     0x00000208      0x182 main.o
-                                0x1b6 (size before relaxing)
- .debug_str     0x0000038a       0x42 MOTOR.o
+ .debug_str     0x00000208      0x186 main.o
+                                0x1ba (size before relaxing)
+ .debug_str     0x0000038e       0x96 MOTOR.o
                                 0x1c8 (size before relaxing)
- .debug_str     0x000003cc       0x5b Speed.o
+ .debug_str     0x00000424       0x5b Speed.o
                                 0x229 (size before relaxing)
 
 .debug_loc      0x00000000       0xe8

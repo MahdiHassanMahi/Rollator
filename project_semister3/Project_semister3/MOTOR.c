@@ -13,30 +13,33 @@ void motor_setup()
 	// PD4 is for controlling direction
 	// PD7 is for switching on/off
 
-	DDRD |= (1 << DDD4) | (1 << DDD5) | ( 1<< DDD6) | (1<< DDD7);
-	DDRB |= (1 << DDB4) | (1 << DDB5);				
+	DDRD |= (1 << DDD4) | (1 << DDD5) | ( 1<< DDD6) | (1<< DDD7) | (1<< DDD1);
+	DDRB |= (1 << DDB4) | (1 << DDB5);
 	TCCR0A |= (1 << WGM01) | (1 << WGM00);			 // Fast PWM
 	TCCR0A |= (1 << COM0A1) | (1 << COM0B1);
 	TCCR0B |= (1 << CS02);							// clk I/O 256 pr e-scaler
 	OCR0B = 255;
-	OCR0A = 255;	
+	OCR0A = 255;
 }
 
 void forward()
 {
 	//PORTD |= (1<<PORTD4);
+	//PORTD &= ~(1<<PORTD1);
 	//PORTD &= ~(1<<PORTD4);
-	OCR0A = speedMotors;
-	OCR0B = speedMotors;
+	OCR0A =  speedMotors - 5;
+	OCR0B =  speedMotors;
 	
 }
 
 void backward()
 {
-	//PORTD &= ~(1<<PORTD4);
-	PORTD |= (1<<PORTD4);
-	OCR0A = speedMotors;
-	OCR0B = speedMotors;
+	//PORTD &= ~(1<<PORTD1);
+	//PORTD |= (1<<PORTD1);
+	//PORTD |= (1<<PORTD4);
+	
+	OCR0A =  speedMotors - 10 ;
+	OCR0B =  speedMotors;
 }
 
 void leftTank()
@@ -56,8 +59,8 @@ void rightTank()
 
 void motorOn()
 {
-  
-    PORTD |= (1<<PORTD7);
+	
+	PORTD |= (1<<PORTD7);
 
 }
 

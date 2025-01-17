@@ -13,5 +13,6 @@ void setup_interrupts1(void);
 void FBfunction(void);
 void RBfunction (void);
 void statemachine(void);
+void timer1_init(void);
 
 #endif // SPEED_H
